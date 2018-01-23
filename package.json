@@ -1,7 +1,7 @@
 {
   "name": "grunt-pubdnt",
   "description": "a tool for dnt publishment",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/maplesec/grunt-pubdnt",
   "author": {
     "name": "郗文枫",
