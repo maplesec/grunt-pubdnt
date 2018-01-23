@@ -28,7 +28,7 @@ module.exports = function (grunt) {
         var done = this.async();
 
         console.log("compressing dist.tar.gz...")
-        var cmdStr = "tar -zcf dist.tar.gz business/ ui_assets/ ui_components/ config.constant.js index.html";
+        var cmdStr = "tar -zcvf dist.tar.gz *";
         exec(cmdStr, {cwd: "dist/"}, function (err, stdout, stderr) {
             if (err) {
                 console.log('error:' + stderr + err);
