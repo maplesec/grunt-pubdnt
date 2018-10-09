@@ -1,6 +1,8 @@
 # grunt-pubdnt
 
-> a tool for dnt publishment
+> A tool for publishing to docker
+
+> 一个简单的插件，可以把本地的代码更新到服务器docker容器内
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -19,71 +21,26 @@ grunt.loadNpmTasks('grunt-pubdnt');
 
 ## The "pubdnt" task
 
-### Overview
-In your project's Gruntfile, add a section named `pubdnt` to the data object passed into `grunt.initConfig()`.
-
-```js
-grunt.initConfig({
-  pubdnt: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-});
-```
-
-### Options
-
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
 ### Usage Examples
 
-#### Default Options
+#### Options
 In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
 
 ```js
 grunt.initConfig({
   pubdnt: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+    default_options: {
+      options: {
+          target_server: ["host_ip"],
+          target_port:"host_port",
+          username:"your_name",
+          password:"your_password",
+          docker_name:"docker_name"
+      }
     },
-  },
+  }
 });
 ```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  pubdnt: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
 _(Nothing yet)_
